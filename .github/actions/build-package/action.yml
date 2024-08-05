@@ -79,4 +79,4 @@ runs:
           deployFlags+=( --installation-key-bypass )
         fi
         sf package version create "${deployFlags[@]}" > package-data.json
-        {echo "package_id=" ; -Po '"SubscriberPackageVersionId": \K"[a-zA-Z0-9]{18}"' package-data.json; }" | tr "\n" " " >> "$GITHUB_OUTPUT"
+        {echo "package_id=" ; grep -Po '"SubscriberPackageVersionId": \K"[a-zA-Z0-9]{18}"' package-data.json; } | tr "\n" "" >> "$GITHUB_OUTPUT"
