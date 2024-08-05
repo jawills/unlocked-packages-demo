@@ -2,11 +2,26 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default": true
+      "default": true,
+      "package": "Clever Package Name",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.2.0.NEXT",
+      "releaseNotesUrl": "https://github.com/jawills/unlocked-packages-demo",
+      "versionDescription": ""
     }
   ],
   "name": "sf-org-template",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "60.0"
+  "sourceApiVersion": "60.0",
+  "packageAliases": {
+    "Clever Package Name": "0Hoak0000000CXRCA2",
+    "Clever Package Name@0.1.0-1": "04tak0000002WevAAE",
+    "Clever Package Name@0.1.0-2": "04tak0000002WgXAAU",
+    "Clever Package Name@0.1.0-3": "04tak0000002WmzAAE",
+    "Clever Package Name@0.1.0-6": "04tak0000002WrpAAE",
+    "Clever Package Name@0.2.0-2": "04tak0000002hs5AAA",
+    "Clever Package Name@0.2.0-3": "04tak0000002hthAAA",
+    "Clever Package Name@0.2.0-4": "04tak0000002iBRAAY"
+  }
 }

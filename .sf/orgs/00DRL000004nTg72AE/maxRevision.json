@@ -1,0 +1,53 @@
+{
+    "serverMaxRevisionCounter": 18,
+    "sourceMembers": {
+        "CustomField__Account.Hello_World__c": {
+            "serverRevisionCounter": 1,
+            "lastRetrievedFromServer": 1,
+            "memberType": "CustomField",
+            "isNameObsolete": false
+        },
+        "Layout__Account-Account (Marketing) Layout": {
+            "serverRevisionCounter": 2,
+            "lastRetrievedFromServer": null,
+            "memberType": "Layout",
+            "isNameObsolete": false
+        },
+        "Layout__Account-Account (Sales) Layout": {
+            "serverRevisionCounter": 3,
+            "lastRetrievedFromServer": null,
+            "memberType": "Layout",
+            "isNameObsolete": false
+        },
+        "Layout__Account-Account (Support) Layout": {
+            "serverRevisionCounter": 4,
+            "lastRetrievedFromServer": null,
+            "memberType": "Layout",
+            "isNameObsolete": false
+        },
+        "Layout__Account-Account Layout": {
+            "serverRevisionCounter": 5,
+            "lastRetrievedFromServer": null,
+            "memberType": "Layout",
+            "isNameObsolete": false
+        },
+        "Profile__Admin": {
+            "serverRevisionCounter": 7,
+            "lastRetrievedFromServer": null,
+            "memberType": "Profile",
+            "isNameObsolete": false
+        },
+        "ApexClass__HelloWorld": {
+            "serverRevisionCounter": 16,
+            "lastRetrievedFromServer": 16,
+            "memberType": "ApexClass",
+            "isNameObsolete": false
+        },
+        "ApexClass__HelloWorldTest": {
+            "serverRevisionCounter": 18,
+            "lastRetrievedFromServer": 18,
+            "memberType": "ApexClass",
+            "isNameObsolete": false
+        }
+    }
+}

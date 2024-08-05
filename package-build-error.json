@@ -1,0 +1,11 @@
+{
+  "code": 1,
+  "context": "PackageVersionCreateCommand",
+  "commandName": "PackageVersionCreateCommand",
+  "message": "Multiple errors occurred: \n(1) HelloWorld: Missing ';' at '}'\n(2) HelloWorld: Variable does not exist: awfawffawfwfa",
+  "name": "MultipleErrorsError",
+  "status": 1,
+  "stack": "MultipleErrorsError: Multiple errors occurred: \n(1) HelloWorld: Missing ';' at '}'\n(2) HelloWorld: Variable does not exist: awfawffawfwfa\n    at Messages.createError (/home/jawills/.local/share/sf/node_modules/@salesforce/core/lib/messages.js:393:16)\n    at PackageVersionCreateCommand.run (/home/jawills/.local/share/sf/node_modules/@salesforce/plugin-packaging/lib/commands/package/version/create.js:79:32)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PackageVersionCreateCommand._run (/home/jawills/.local/share/sf/node_modules/@oclif/core/lib/command.js:117:22)\n    at async Config.runCommand (/usr/lib/node_modules/@salesforce/cli/node_modules/@oclif/core/lib/config/config.js:424:25)\n    at async run (/usr/lib/node_modules/@salesforce/cli/node_modules/@oclif/core/lib/main.js:95:16)\n    at async file:///usr/lib/node_modules/@salesforce/cli/bin/run.js:15:1",
+  "exitCode": 1,
+  "warnings": []
+}

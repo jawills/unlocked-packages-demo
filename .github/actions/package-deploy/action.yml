@@ -1,0 +1,82 @@
+name: Salesforce Package Deploy
+description: Builds, promotes, and installs a package to a specified environment
+author: jawills
+branding:
+  icon: code
+  color: green
+inputs:
+  BRANCH:
+    description: "Name of the branch in your source control system that the package version is based on."
+    type: string
+  TAG:
+    description: "Package version's tag."
+    type: string
+  INSTALLATION_KEY:
+    description: "Installation key for key-protected package."
+    type: string
+  PACKAGE:
+    description: "ID (starts with 0Ho) or alias of the package to create a version of."
+    type: string
+    required: true
+  WAIT:
+    description: "Number of minutes to wait for command to complete and display results."
+    type: number
+    default: 30
+  DEV_HUB_AUTH_URL:
+    description: "The auth url tied to your dev hub environment"
+    type: string
+    required: true
+  INSTALL_ORG_AUTH_URL:
+    description: "The auth url tied to your target installation org"
+    type: string
+  CODE_COVERAGE:
+    description: "Calculate code coverage in the package. Required to promote a beta package."
+    type: boolean
+  PROMOTE:
+    description: "Promte the beta package to install in a production org."
+    type: boolean
+outputs:
+  PACKAGE_ID:
+    description: "Package Id used to install the package"
+    value: ${{ steps.build_package.outputs.package_id }}
+
+runs:
+  using: "composite"
+  steps:
+    - id: "install-cli"
+      name: Install Salesforce CLI
+      shell: bash
+      run: |
+        npm install -g @salesforce/cli
+        sf --version
+    - id: "auth-dev-hub"
+      name: Login to Dev Hub
+      shell: bash
+      run: |
+        sf org login sfdx-url --set-default-dev-hub --sfdx-url-file <(echo "${{ inputs.DEV_HUB_AUTH_URL }}")
+    - id: "build_package"
+      name: Build Package
+      shell: bash
+      run: |
+        deployFlags=(
+            --wait ${{ inputs.WAIT }}
+            --package ${{ inputs.PACKAGE }}
+            --json
+            --verbose
+          )
+        if [ "${{ inputs.CODE_COVERAGE }}" = "true" ]; then
+          deployFlags+=( --code-coverage )
+        fi
+        if [[ -n "${{ inputs.TAG }}" ]]; then
+          deployFlags+=( --tag "${{ inputs.TAG }}" )
+        fi
+        if [[ -n "${{ inputs.BRANCH }}" ]]; then
+          deployFlags+=( --branch "${{ inputs.BRANCH }}" )
+        fi
+        if [[ -n "${{ inputs.INSTALLATION_KEY }}" ]]; then
+          deployFlags+=( --installation-key "${{ inputs.INSTALLATION_KEY }}" )
+        else
+          deployFlags+=( --installation-key-bypass )
+        fi
+        sf package version create "${deployFlags[@]}" > package-data.json
+        {echo "package_id=" ; -Po '"SubscriberPackageVersionId": \K"[a-zA-Z0-9]{18}"' package-data.json; }" | tr "\n" " " >> "$GITHUB_OUTPUT"

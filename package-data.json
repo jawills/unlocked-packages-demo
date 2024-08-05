@@ -1,0 +1,18 @@
+{
+  "status": 0,
+  "result": {
+    "Id": "08cak0000000V0bAAE",
+    "Status": "Initializing",
+    "Package2Id": "0Hoak0000000CXRCA2",
+    "Package2VersionId": null,
+    "SubscriberPackageVersionId": null,
+    "Tag": null,
+    "Branch": null,
+    "Error": [],
+    "CreatedDate": "2024-08-04 09:50",
+    "HasMetadataRemoved": null,
+    "CreatedBy": "005ak000006FQmkAAG",
+    "ConvertedFromVersionId": "Request is in progress. ID unavailable."
+  },
+  "warnings": []
+}

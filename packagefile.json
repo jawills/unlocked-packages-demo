@@ -1,0 +1,18 @@
+{
+  "status": 0,
+  "result": {
+    "Id": "08cak0000000V8fAAE",
+    "Status": "Success",
+    "Package2Id": "0Hoak0000000CXRCA2",
+    "Package2VersionId": "05iak0000000LvhAAE",
+    "SubscriberPackageVersionId": "04tak0000002iBRAAY",
+    "Tag": null,
+    "Branch": null,
+    "Error": [],
+    "CreatedDate": "2024-08-04 20:46",
+    "HasMetadataRemoved": false,
+    "CreatedBy": "005ak000006FQmkAAG",
+    "ConvertedFromVersionId": null
+  },
+  "warnings": []
+}
